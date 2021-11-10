@@ -1,10 +1,14 @@
 const express = require('express');
-
+const cors = require('cors') // or https://stackoverflow.com/a/68971146/9259701
 const app = express();
 
-// routes
-let _routes = require('../controllers/userController')
+// before using routes
+app.use(cors())
+app.use(express.json());
 
-app.use(_routes)
+// routes
+let userRoutes = require('../controllers/userController')
+
+app.use('/api/v1/user', userRoutes)
 
 module.exports = app

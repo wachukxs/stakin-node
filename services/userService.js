@@ -1,16 +1,17 @@
 module.exports = {
-    async serveIndexPage (req, res) {
-       
+    async signUpUser (req, res) {
+        console.log(req.body);
+
+        res.send('Done')
     },
 
-    async serveD3Page (req, res) {
-        
+    async logInUser (req, res) {
+        console.log('req.body in logInUser', req.body);
+
+        res.json({ message: 'Done' })
     },
 
     async getServiceReport(req, res) {
 
-        
-
-        
     }
 }
